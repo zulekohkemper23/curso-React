@@ -1,10 +1,11 @@
 import { Component } from 'react';
 import Productos from './components/productos';
+import Layout from './components/Layout'
 
 class App extends Component {
   state = {
     productos: [
-      { name: "Escritorio", precio: 100000, img: '/productos/arbejas.jpg' },
+      { name: "Tomate", precio: 100000, img: '/productos/tomate.jpg' },
       { name: "Computadora", precio: 750000, img: '/productos/computadora.jpg' },
       { name: "Headphone", precio: 30000, img: '/productos/headphones.jpg' },
     ]
@@ -12,7 +13,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Productos agregarAlCarrito={() => console.log("agregado")} productos={this.state.productos}/>
+        <Layout>
+          <Productos agregarAlCarrito={() => console.log("agregado")} productos={this.state.productos} />
+        </Layout>
       </div>
     )
   }
